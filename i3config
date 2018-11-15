@@ -167,6 +167,7 @@ bar {
 }
 
 # own settings
+
 new_window 1pixel
 exec_always compton
 #exec ~/Downloads/screenconf.sh
