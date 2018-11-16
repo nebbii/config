@@ -168,7 +168,11 @@ bar {
 
 # own settings
 
+# For laptops
+exec --no-startup-id nm-applet
+
 new_window 1pixel
 exec_always compton
+
 #exec ~/Downloads/screenconf.sh
 exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/Current*
