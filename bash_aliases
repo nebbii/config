@@ -1,6 +1,5 @@
 alias clip='scrot -s ~/.scrotclippa.png && xclip -selection c -t image/png -i ~/.scrotclippa.png && rm ~/.scrotclippa.png'
 alias bashrc='vim ~/.bashrc'
-alias nexxusdir='cd ~/Documents/Projects/nexxus'
 alias ITSSHOWTIME='php bin/console server:run'
 alias fuckgoback='git reset --hard HEAD~'
 alias meleebich='~/Documents/FMv5.9/launch-fm'
