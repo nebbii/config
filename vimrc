@@ -52,8 +52,6 @@ if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
 
-" Pathogen 
-execute pathogen#infect()
 
 " Normal indenting
 set tabstop=4
@@ -71,6 +69,9 @@ autocmd BufNewFile,BufRead *.twig set syntax=html
 
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
-" Plugin Customizations
+" Plugins 
+" List: gitgutter lightline nerdtree vim-javascript
+execute pathogen#infect()
+
 set laststatus=2
 map <C-o> :NERDTreeToggle<CR>
