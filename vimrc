@@ -53,7 +53,7 @@ if filereadable("/etc/vim/vimrc.local")
 endif
 
 
-" Normal indenting
+" Indenting customizing
 set tabstop=4
 set shiftwidth=4
 set expandtab
