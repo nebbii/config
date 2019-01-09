@@ -52,16 +52,14 @@ if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
 
-" Plugins 
-" call plug#begin()
-
-" Plug 'https://github.com/scrooloose/nerdtree.git'
+" Pathogen 
+execute pathogen#infect()
 
 " Normal indenting
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set number
+set relativenumber
 set smartindent
 
 " Automatic comment following in Insert mode
@@ -71,3 +69,7 @@ set formatoptions=tcqr
 autocmd BufNewFile,BufRead *.twig set syntax=html
 
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+
+" Plugin Customizations
+set laststatus=2
+map <C-o> :NERDTreeToggle<CR>
