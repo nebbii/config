@@ -70,7 +70,7 @@ autocmd BufNewFile,BufRead *.twig set syntax=html
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
 " Plugins 
-" List: gitgutter lightline nerdtree vim-javascript
+"" List: gitgutter lightline nerdtree vim-javascript
 execute pathogen#infect()
 
 set laststatus=2
