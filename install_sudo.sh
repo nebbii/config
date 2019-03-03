@@ -1,4 +1,4 @@
-sudo apt install i3 cmus feh arandr vim curl git screenfetch 
+sudo apt install i3 cmus feh arandr vim curl git screenfetch compton google-chrome 
 sudo cp i3config ~/.config/i3/config
 sudo cp i3status.conf /etc/i3status.conf
 sudo cp bashrc ~/.bashrc
