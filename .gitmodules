@@ -10,3 +10,6 @@
 [submodule "vimplugins/bundle/vimjavascript"]
 	path = vimplugins/bundle/vimjavascript
 	url = https://github.com/pangloss/vim-javascript
+[submodule "cli-visualizer"]
+	path = cli-visualizer
+	url = https://github.com/dpayne/cli-visualizer
