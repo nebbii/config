@@ -1,4 +1,14 @@
-sudo apt install i3 cmus feh arandr vim curl git screenfetch compton google-chrome 
+# install programs
+# missing: google-chrome, discord
+sudo apt install i3 cmus feh arandr vim curl git screenfetch compton thunderbird 
+
+# vim plugins
+git submodules init
+git pull --recursive-submodules
+rsync --progress vimplugins/* ~/.vim
+
+# config file placement
+mkdir ~/.config/i3
 sudo cp i3config ~/.config/i3/config
 sudo cp i3status.conf /etc/i3status.conf
 sudo cp bashrc ~/.bashrc
