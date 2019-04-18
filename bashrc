@@ -116,4 +116,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
+eval `ssh-agent -s` 
+eval `ssh-add ~/.ssh/keys/id_*` 
+
 alias xamppstack='/opt/lampp/xampp'

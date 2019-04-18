@@ -1,5 +1,5 @@
 # install programs
-# missing: google-chrome, discord
+# missing: google-chrome, discord, slack, phpstorm etc
 sudo apt install i3 cmus feh arandr vim curl git screenfetch compton thunderbird kolourpaint pavucontrol 
 
 # vim plugins
