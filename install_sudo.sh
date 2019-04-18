@@ -15,5 +15,8 @@ sudo cp bashrc ~/.bashrc
 sudo cp bash_aliases ~/.bash_aliases 
 sudo cp vimrc ~/.vimrc
 
+# fonts
+sudo apt install xfonts-terminus
+
 git config --global user.email "ben.wolthuis@gmail.com"
 git config --global user.name "Ben"
