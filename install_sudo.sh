@@ -1,6 +1,6 @@
 # install programs
 # missing: google-chrome, discord
-sudo apt install i3 cmus feh arandr vim curl git screenfetch compton thunderbird 
+sudo apt install i3 cmus feh arandr vim curl git screenfetch compton thunderbird kolourpaint pavucontrol 
 
 # vim plugins
 git submodules init
