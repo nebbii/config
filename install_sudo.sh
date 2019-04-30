@@ -8,15 +8,19 @@ sudo apt-get -y install libev-dev libxcb-composite0 libxcb-composite0-dev libxcb
 # vim plugins
 git submodules init
 git pull --recursive-submodules
-rsync --progress vimplugins/* ~/.vim
+mkdir ~/.vim 
+rsync --progress vim/* ~/.vim
 
-# config file placement
+# dotfiles
 mkdir ~/.config/i3
 sudo cp i3config ~/.config/i3/config
 sudo cp i3status.conf /etc/i3status.conf
 sudo cp bashrc ~/.bashrc
 sudo cp bash_aliases ~/.bash_aliases 
 sudo cp vimrc ~/.vimrc
+
+# binaries
+sudo cp clip /usr/bin/
 
 # fonts
 sudo apt install xfonts-terminus
