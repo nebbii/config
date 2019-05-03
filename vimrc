@@ -76,3 +76,4 @@ execute pathogen#infect()
 set laststatus=2
 map <C-o> :NERDTreeToggle<CR>
 map <C-n> :tabnew \| :FufFile **/<CR>
+map <C-k> :tabnew \| :FufTag<CR>
