@@ -73,7 +73,47 @@ highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE gui
 "" List: gitgutter lightline nerdtree vim-javascript
 execute pathogen#infect()
 
+" Ctags and Cscope
+set tags=tags
+
+if has('cscope')
+  set cscopetag cscopeverbose
+
+  if has('quickfix')
+    set cscopequickfix=s-,c-,d-,i-,t-,e-
+  endif
+
+  cnoreabbrev csa cs add
+  cnoreabbrev csf cs find
+  cnoreabbrev csk cs kill
+  cnoreabbrev csr cs reset
+  cnoreabbrev css cs show
+  cnoreabbrev csh cs help
+
+  command -nargs=0 Cscope cs add $VIMSRC/src/cscope.out $VIMSRC/src
+endif
+
 set laststatus=2
+
+" Templating
+" pdv
+let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
+map <C-F10> :call pdv#DocumentWithSnip()<CR>
+
+" Ultisnips
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+" CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
 map <C-o> :NERDTreeToggle<CR>
-map <C-n> :tabnew \| :FufFile **/<CR>
-map <C-k> :tabnew \| :FufTag<CR>
+map <C-n> :tabnew \| :CtrlP <CR>
+map <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+

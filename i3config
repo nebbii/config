@@ -212,6 +212,8 @@ bindsym XF86AudioPrev exec cmus-remote -r
 # For laptops
 exec --no-startup-id nm-applet
 
+exec --no-startup-id ibus-daemon
+
 new_window 1pixel
 exec_always compton
 
