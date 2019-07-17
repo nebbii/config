@@ -73,7 +73,7 @@ autocmd BufNewFile,BufRead *.twig set syntax=html
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
 " Plugins 
-"" List: gitgutter lightline  vim-javascript
+"" List: gitgutter lightline nerdtree vim-javascript
 execute pathogen#infect()
 let g:pathogen_disabled = ['vimjavascript']
 
@@ -89,8 +89,10 @@ let g:ctrlp_max_files = 0
 let g:ctrlp_max_depth = 40
 
 "autocmd BufWritePost * :silent !./updategp.sh 
+"autocmd BufWritePost * :redraw! 
 
 map <TAB> :tabnext <CR>
+"map <C-o> :NERDTreeToggle<CR>
 map <C-n> :tabnew \| :CtrlP <CR>
 map <F10> :silent !./updategp.sh <CR>
 map <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
