@@ -118,5 +118,6 @@ fi
 
 eval `ssh-agent -s` 
 eval `ssh-add ~/.ssh/keys/id_*` 
+clear
 
 alias xamppstack='/opt/lampp/xampp'
