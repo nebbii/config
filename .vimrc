@@ -4,6 +4,7 @@
 " will be overwritten everytime an upgrade of the vim packages is performed.
 " It is recommended to make changes after sourcing debian.vim since it alters
 " the value of the 'compatible' option.
+colorscheme zellner
 
 " This line should not be removed as it ensures that various options are
 " properly set to work with the Vim-related packages available in Debian.
@@ -45,7 +46,8 @@ set smartcase		" Do smart case matching
 set incsearch		" Incremental search
 set autowrite		" Automatically save before commands like :next and :make
 set hidden		" Hide buffers when they are abandoned
-set mouse=a		" Enable mouse usage (all modes)
+"set mouse=a		" Enable mouse usage (all modes)
+set mouse=		" DISABLE mouse usage (fuck mouse)
 
 " Source a global configuration file if available
 if filereadable("/etc/vim/vimrc.local")
@@ -56,13 +58,14 @@ endif
 " Indenting customizing
 set tabstop=4
 set shiftwidth=4
-set expandtab
+set noexpandtab
+"set expandtab
 set number
 set relativenumber
 set smartindent
 
 " Automatic comment following in Insert mode
-set formatoptions=tcqr 
+"set formatoptions=tcqr 
 
 " Twig highlighting
 autocmd BufNewFile,BufRead *.twig set syntax=html
@@ -70,50 +73,24 @@ autocmd BufNewFile,BufRead *.twig set syntax=html
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
 " Plugins 
-"" List: gitgutter lightline nerdtree vim-javascript
+"" List: gitgutter lightline  vim-javascript
 execute pathogen#infect()
+let g:pathogen_disabled = ['vimjavascript']
 
 " Ctags and Cscope
 set tags=tags
 
-if has('cscope')
-  set cscopetag cscopeverbose
-
-  if has('quickfix')
-    set cscopequickfix=s-,c-,d-,i-,t-,e-
-  endif
-
-  cnoreabbrev csa cs add
-  cnoreabbrev csf cs find
-  cnoreabbrev csk cs kill
-  cnoreabbrev csr cs reset
-  cnoreabbrev css cs show
-  cnoreabbrev csh cs help
-
-  command -nargs=0 Cscope cs add $VIMSRC/src/cscope.out $VIMSRC/src
-endif
-
 set laststatus=2
-
-" Templating
-" pdv
-let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
-map <C-F10> :call pdv#DocumentWithSnip()<CR>
-
-" Ultisnips
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
 
 " CtrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_max_files = 0
+let g:ctrlp_max_depth = 40
 
-map <C-o> :NERDTreeToggle<CR>
+"autocmd BufWritePost * :silent !./updategp.sh 
+
+map <TAB> :tabnext <CR>
 map <C-n> :tabnew \| :CtrlP <CR>
+map <F10> :silent !./updategp.sh <CR>
 map <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-
