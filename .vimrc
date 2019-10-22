@@ -15,7 +15,6 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'vim-airline/vim-airline'
 
-
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -54,19 +53,19 @@ endif
 
 " If using a dark background within the editing area and syntax highlighting
 " turn on this option as well
-"set background=dark
+set background=dark
 
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
-"if has("autocmd")
-"  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-"endif
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
 
 " Uncomment the following to have Vim load indentation rules and plugins
 " according to the detected filetype.
-"if has("autocmd")
-"  filetype plugin indent on
-"endif
+if has("autocmd")
+  filetype plugin indent on
+endif
 
 " The following are commented out as they cause vim to behave a lot
 " differently from regular Vi. They are highly recommended though.
@@ -108,8 +107,8 @@ set novisualbell        " turn off visual bell
 set backspace=indent,eol,start  " make that backspace key work the way it should
 
 syntax on               " turn syntax highlighting on by default
-filetype on             " detect type of file
-filetype indent on      " load indent file for specific file type
+"filetype on             " detect type of file
+"filetype indent on      " load indent file for specific file type
 
 set t_RV=               " http://bugs.debian.org/608242, http://groups.google.com/group/vim_dev/browse_thread/thread/9770ea844cec3282
 
@@ -120,9 +119,6 @@ set t_RV=               " http://bugs.debian.org/608242, http://groups.google.co
 autocmd BufNewFile,BufRead *.twig set syntax=html
 
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
-
-" Plugins 
-"" List: gitgutter lightline nerdtree vim-javascript
 
 " Ctags and Cscope
 set tags=tags
@@ -140,6 +136,7 @@ let g:ctrlp_max_depth = 40
 
 map <TAB> :tabnext <CR>
 "map <C-o> :NERDTreeToggle<CR>
-map <C-n> :tabnew \| :CtrlP <CR>
-map <F10> :silent !./updategp.sh <CR>
+map <C-n> :tabnew \| :CtrlP . <CR>
+map <F10> :silent !./update.sh \| :redraw! <CR>
+map <Bslash> "*y
 map <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
