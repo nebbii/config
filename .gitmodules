@@ -13,3 +13,6 @@
 [submodule "cli-visualizer"]
 	path = cli-visualizer
 	url = https://github.com/dpayne/cli-visualizer
+[submodule ".vim/bundle/Vundle.vim"]
+	path = .vim/bundle/Vundle.vim
+	url = https://github.com/VundleVim/Vundle.vim.git
