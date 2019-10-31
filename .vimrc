@@ -1,3 +1,8 @@
+
+" This line should not be removed as it ensures that various options are
+" properly set to work with the Vim-related packages available in Debian.
+runtime! debian.vim
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -8,12 +13,12 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-" Plugin 'VundleVim/Vundle.vim'
-" Plugin 'tpope/vim-fugitive'
-" Plugin 'tpope/vim-surround'
-" Plugin 'ctrlpvim/ctrlp.vim'
-" Plugin 'scrooloose/syntastic'
-" Plugin 'vim-airline/vim-airline'
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'vim-airline/vim-airline'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -35,10 +40,6 @@ filetype plugin indent on    " required
 " It is recommended to make changes after sourcing debian.vim since it alters
 " the value of the 'compatible' option.
 colorscheme zellner
-
-" This line should not be removed as it ensures that various options are
-" properly set to work with the Vim-related packages available in Debian.
-runtime! debian.vim
 
 " Uncomment the next line to make Vim more Vi-compatible
 " NOTE: debian.vim sets 'nocompatible'.  Setting 'compatible' changes numerous
