@@ -5,7 +5,7 @@ alias fuckgoback='git reset --hard HEAD~'
 alias meleebich='~/Documents/FMv5.9/launch-fm'
 
 # Aliases
-alias vim='nvim'
+#alias vim='nvim'
 alias lynx='lynx -accept-all-cookies -trace'
 
 alias untar="tar -xvzf"

@@ -1,7 +1,6 @@
 
 " This line should not be removed as it ensures that various options are
 " properly set to work with the Vim-related packages available in Debian.
-runtime! debian.vim
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -23,6 +22,9 @@ Plugin 'vim-airline/vim-airline'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+runtime! debian.vim
+
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
