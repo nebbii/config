@@ -24,9 +24,3 @@ alias lsa='ls -l -a'
 alias docker='sudo docker'
 alias dcup='docker-compose up'
 alias dcdown='docker-compose down'
-
-# Gamepoint
-alias sshdevgamepoint='ssh bwolthuis@dev-fra01-eu.gamepoint.net'
-alias sshbengp='ssh bwolthuis@172.31.23.74'
-alias mountsshdev='sudo sshfs -o allow_other -o IdentityFile=/home/ben/.ssh/keys/id_rsa_bwolthuis bwolthuis@dev-fra01-eu.gamepoint.net:/home/bwolthuis /mnt/gpdev'
-alias fpmbash='docker-compose exec php-fpm bash'
