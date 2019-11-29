@@ -14,7 +14,7 @@ alias search="find . -name"
 # Git
 alias gca='git commit -a'
 alias gcm='git commit -m'
-alias gcam='git commit -am'
+alias gcam='git commit -a -S -m'
 alias gls='git status'
 
 # General
