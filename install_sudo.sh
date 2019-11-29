@@ -8,8 +8,6 @@ sudo apt-get -y install libev-dev libxcb-composite0 libxcb-composite0-dev libxcb
 # vim plugins
 git submodules init
 git pull --recursive-submodules
-mkdir ~/.vim 
-rsync --progress vim/* ~/.vim
 
 # dotfiles
 mkdir ~/.config/i3
