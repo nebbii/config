@@ -14,6 +14,8 @@ if [ ! -d "~/.vim/bundle/Vundle.vim" ] ; then
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
 
+sudo chown -R ben:ben ~/.vim/bundle/Vundle.vim
+
 # dotfiles
 mkdir -p ~/.config/i3
 sudo cp i3config ~/.config/i3/config
