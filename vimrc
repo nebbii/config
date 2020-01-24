@@ -144,6 +144,9 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_max_files = 0
 let g:ctrlp_max_depth = 40
 
+set wildignore+=*/node_modules/*
+set wildignore+=*.csv
+
 "autocmd BufWritePost * :silent !./updategp.sh 
 "autocmd BufWritePost * :redraw! 
 
