@@ -61,7 +61,7 @@ bindsym $mod+F3 exec pcmanfm
 # bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 bindsym $mod+F5 exec terminal -e 'mocp'
-bindsym $mod+p exec --no-startup-id pkill compton
+#bindsym $mod+p exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+g exec --no-startup-id compton -b
 bindsym $mod+Shift+s --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print exec --no-startup-id i3-scrot
@@ -255,7 +255,7 @@ mode "$mode_system" {
 }
 
 # Resize window (you can also use the mouse for that)
-bindsym $mod+r mode "resize"
+bindsym $mod+p mode "resize"
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
         # Pressing left will shrink the window’s width.
@@ -427,10 +427,16 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
+# Media player controls
+bindsym XF86AudioPlay exec cmus-remote -u || playerctl play-pause 
+bindsym XF86AudioNext exec cmus-remote -n || playerctl next 
+bindsym XF86AudioPrev exec cmus-remote -r || playerctl previous
+
 # programs :3
-exec discord
-exec spotify
-exec imwheel -b 45
+exec --no-startup-id discord
+exec --no-startup-id spotify
+exec --no-startup-id imwheel -b 45
+exec --no-startup-id xinput set-prop 306 1
 
 exec_always ~/.screenlayout/main.sh
 exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/Current*
