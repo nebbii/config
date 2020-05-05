@@ -1,3 +1,0 @@
-#!/bin/sh
-
-scrot -s /tmp/.scrotclippa.png && xclip -selection c -t image/png -i /tmp/.scrotclippa.png && rm /tmp/.scrotclippa.png

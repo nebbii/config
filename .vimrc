@@ -20,6 +20,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'artur-shaik/vim-javacomplete2'
+Plugin 'ap/vim-css-color'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

@@ -1,4 +1,3 @@
-alias clip='scrot -s ~/.scrotclippa.png && xclip -selection c -t image/png -i ~/.scrotclippa.png && rm ~/.scrotclippa.png'
 alias bashrc='vim ~/.bashrc'
 alias ITSSHOWTIME='php bin/console server:run'
 alias fuckgoback='git reset --hard HEAD~'
@@ -24,3 +23,6 @@ alias lsa='ls -l -a'
 alias docker='sudo docker'
 alias dcup='docker-compose up'
 alias dcdown='docker-compose down'
+
+alias inst='sudo pacman -S'
+alias contactringo='ssh 192.168.0.100'
