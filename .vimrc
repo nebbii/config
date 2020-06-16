@@ -21,6 +21,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'artur-shaik/vim-javacomplete2'
 Plugin 'ap/vim-css-color'
+Plugin 'captbaritone/better-indent-support-for-php-with-html'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -42,6 +43,8 @@ filetype plugin indent on    " required
 " will be overwritten everytime an upgrade of the vim packages is performed.
 " It is recommended to make changes after sourcing debian.vim since it alters
 " the value of the 'compatible' option.
+syntax enable
+colorscheme monokai
 colorscheme zellner
 
 " Uncomment the next line to make Vim more Vi-compatible
@@ -123,6 +126,8 @@ set t_RV=               " http://bugs.debian.org/608242, http://groups.google.co
 autocmd BufNewFile,BufRead *.twig set syntax=html
 
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+
+hi Search cterm=NONE ctermfg=black ctermbg=blue
 
 " Ctags and Cscope
 set tags=tags
