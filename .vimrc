@@ -15,13 +15,19 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'artur-shaik/vim-javacomplete2'
+
 Plugin 'ap/vim-css-color'
+Plugin 'artur-shaik/vim-javacomplete2'
 Plugin 'captbaritone/better-indent-support-for-php-with-html'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'ngmy/vim-rubocop'
+Plugin 'severin-lemaignan/vim-minimap'
+Plugin 'slim-template/vim-slim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'vim-airline/vim-airline'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -45,7 +51,6 @@ filetype plugin indent on    " required
 " the value of the 'compatible' option.
 syntax enable
 colorscheme monokai
-colorscheme zellner
 
 " Uncomment the next line to make Vim more Vi-compatible
 " NOTE: debian.vim sets 'nocompatible'.  Setting 'compatible' changes numerous
@@ -158,7 +163,17 @@ set wildignore+=*.csv
 
 map <TAB> :tabnext <CR>
 "map <C-o> :NERDTreeToggle<CR>
-map <C-n> :tabnew \| :CtrlP . <CR>
-map <F10> :silent !./update.sh \| :redraw! <CR>
+"map <C-n> :tabnew \| :CtrlP . <CR>
+map <C-n> :CtrlP . <CR>
+"map <F10> :silent !./update.sh \| :redraw! <CR>
 map <Bslash> "*y
 map <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+map <F10> :Explore . <CR>
+
+command Ex Explore
+command Te Texplore
+
+let g:airline#extensions#branch#displayed_head_limit = 16
+let g:airline#extensions#branch#format = 1
+let g:airline#extensions#tabline#enabled = 0
+let g:airline_powerline_fonts = 1
