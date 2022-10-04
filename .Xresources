@@ -4,12 +4,14 @@ URxvt.keysym.Control-Left:   \033[1;5D
 URxvt.keysym.Control-Right:  \033[1;5C
 
 !--------------------xdefauls
-URxvt.font:                       9x15,xft:TerminessTTFNerdFontMono
+URxvt.font: -xos4-terminus-medium-r-normal-*-16-*-72-72-c-80-*-*
+!URxvt.font: -*-clean-medium-r-*--15-*-*-*-*-*-*-*
+!URxvt.font: -*-clean-medium-r-*--15-*-*-*-*-*-iso8859-*
+
 urxvt*termName: rxvt
 urxvt*scrollBar: false
 urxvt*matcher.button: 1
-urxvt.transparent: false
-urxvt.boldFont:
+urxvt.transparent: true
 Xft*dpi: 96
 Xft*antialias: true
 Xft*hinting: true
