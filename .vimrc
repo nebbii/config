@@ -1,4 +1,3 @@
-
 " This line should not be removed as it ensures that various options are
 " properly set to work with the Vim-related packages available in Debian.
 
@@ -15,10 +14,8 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
 Plugin 'ap/vim-css-color'
 Plugin 'artur-shaik/vim-javacomplete2'
-Plugin 'captbaritone/better-indent-support-for-php-with-html'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'ngmy/vim-rubocop'
 Plugin 'severin-lemaignan/vim-minimap'
@@ -28,6 +25,7 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -50,7 +48,6 @@ filetype plugin indent on    " required
 " It is recommended to make changes after sourcing debian.vim since it alters
 " the value of the 'compatible' option.
 syntax enable
-colorscheme monokai
 
 " Uncomment the next line to make Vim more Vi-compatible
 " NOTE: debian.vim sets 'nocompatible'.  Setting 'compatible' changes numerous
@@ -125,7 +122,7 @@ syntax on               " turn syntax highlighting on by default
 set t_RV=               " http://bugs.debian.org/608242, http://groups.google.com/group/vim_dev/browse_thread/thread/9770ea844cec3282
 
 " Automatic comment following in Insert mode
-"set formatoptions=tcqr 
+set formatoptions-=cro
 
 " Twig highlighting
 autocmd BufNewFile,BufRead *.twig set syntax=html
@@ -177,3 +174,7 @@ let g:airline#extensions#branch#displayed_head_limit = 16
 let g:airline#extensions#branch#format = 1
 let g:airline#extensions#tabline#enabled = 0
 let g:airline_powerline_fonts = 1
+
+set t_Co=256
+
+let g:ale_c_parse_makefile = 1
