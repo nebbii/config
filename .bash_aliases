@@ -32,11 +32,6 @@ alias dcdown='docker-compose down'
 alias inst='sudo pacman -S'
 alias contactringo='ssh -o IdentitiesOnly=yes 192.168.2.31'
 
-# Work
-alias connectweb01='ssh root@web01.smidswater.nl'
-alias connectweb04='ssh root@web04.smidswater.nl'
-alias mountSmidswaterServer='mount_afp afp://ben.wolthuis:2n5gQT\&8uWak@server.smidswater.nl/Smidswater_Server /home/ben/Smidswater_Server/'
-
 alias EARDESTRUCTIONTIME='pactl set-sink-volume 1 1200%'
 
 alias incocknito='mv /home/ben/.config/SlippiOnline/user.json /home/ben/.config/SlippiOnline/2user.json; mv /home/ben/.config/SlippiOnline/1user.json /home/ben/.config/SlippiOnline/user.json; mv /home/ben/.config/SlippiOnline/2user.json /home/ben/.config/SlippiOnline/1user.json;'
