@@ -112,6 +112,7 @@ shopt -s expand_aliases
 
 # Enable history appending instead of overwriting.  #139609
 shopt -s histappend
+shopt -s dotglob
 
 #
 # # ex - archive extractor
@@ -138,6 +139,9 @@ ex ()
   fi
 }
 
+# Ruby!
+export PATH="/home/ben/.gem/ruby/2.7.0/bin:$PATH"
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -151,3 +155,9 @@ eval `ssh-agent -s`
 eval `ssh-add ~/.ssh/keys/id_*` 
 clear
 
+
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+export DEVKITARM=/opt/devkitpro/devkitARM
+export DEVKITPRO=/opt/devkitpro
