@@ -14,18 +14,22 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+
 Plugin 'ap/vim-css-color'
 Plugin 'artur-shaik/vim-javacomplete2'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'captbaritone/better-indent-support-for-php-with-html'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'dense-analysis/ale'
 Plugin 'ngmy/vim-rubocop'
 Plugin 'severin-lemaignan/vim-minimap'
 Plugin 'slim-template/vim-slim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -48,6 +52,7 @@ filetype plugin indent on    " required
 " It is recommended to make changes after sourcing debian.vim since it alters
 " the value of the 'compatible' option.
 syntax enable
+colorscheme monokai
 
 " Uncomment the next line to make Vim more Vi-compatible
 " NOTE: debian.vim sets 'nocompatible'.  Setting 'compatible' changes numerous
@@ -122,37 +127,21 @@ syntax on               " turn syntax highlighting on by default
 set t_RV=               " http://bugs.debian.org/608242, http://groups.google.com/group/vim_dev/browse_thread/thread/9770ea844cec3282
 
 " Automatic comment following in Insert mode
-set formatoptions-=cro
+"set formatoptions=tcqr
 
 " Twig highlighting
 autocmd BufNewFile,BufRead *.twig set syntax=html
 
+" Remove trailing whitespace
+autocmd BufWritePre * :%s/\s\+$//e
+
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+highlight ALEWarning term=bold,reverse cterm=NONE ctermfg=228 ctermbg=88 gui=NONE guifg=Yellow guibg=DarkGray
 
 hi Search cterm=NONE ctermfg=black ctermbg=blue
 
-" Clear highlight after search
-autocmd! InsertEnter * call feedkeys("\<Cmd>noh\<cr>" , 'n')
-
 " Ctags and Cscope
-set tags=./tags
-
-if has('cscope')
-  set cscopetag cscopeverbose
-
-  if has('quickfix')
-    set cscopequickfix=s-,c-,d-,i-,t-,e-
-  endif
-
-  cnoreabbrev csa cs add
-  cnoreabbrev csf cs find
-  cnoreabbrev csk cs kill
-  cnoreabbrev csr cs reset
-  cnoreabbrev css cs show
-  cnoreabbrev csh cs help
-
-  command -nargs=0 Cscope cs add $VIMSRC/src/cscope.out $VIMSRC/src
-endif
+set tags=tags
 
 set laststatus=2
 
@@ -173,12 +162,17 @@ let g:ctrlp_max_files = 0
 let g:ctrlp_max_depth = 40
 
 set wildignore+=*/node_modules/*
+set wildignore+=*/mysql/*
+set wildignore+=*/postgres/*
 set wildignore+=*.csv
+set wildignore+=*.cache
+set wildignore+=*.sql
 
-"autocmd BufWritePost * :silent !./updategp.sh 
-"autocmd BufWritePost * :redraw! 
+"autocmd BufWritePost * :silent !./updategp.sh
+"autocmd BufWritePost * :redraw!
 
 map <TAB> :tabnext <CR>
+map <S-tab> :tabprevious <CR>
 "map <C-o> :NERDTreeToggle<CR>
 "map <C-n> :tabnew \| :CtrlP . <CR>
 map <C-n> :CtrlP . <CR>
@@ -195,6 +189,13 @@ let g:airline#extensions#branch#format = 1
 let g:airline#extensions#tabline#enabled = 0
 let g:airline_powerline_fonts = 1
 
-set t_Co=256
+let g:ale_lint_on_text_changed='always'
+let g:ale_lint_delay=0
+let g:ale_lint_delay=0
+let g:ale_ruby_rubocop_options="--config ~/.config/rubocop.yml"
 
-let g:ale_c_parse_makefile = 1
+" Split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
