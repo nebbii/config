@@ -1,3 +1,4 @@
+
 " This line should not be removed as it ensures that various options are
 " properly set to work with the Vim-related packages available in Debian.
 
@@ -142,6 +143,8 @@ hi Search cterm=NONE ctermfg=black ctermbg=blue
 
 " Ctags and Cscope
 set tags=tags
+cs add cscope.out
+set cscopetag cscopeverbose
 
 set laststatus=2
 
@@ -167,6 +170,7 @@ set wildignore+=*/postgres/*
 set wildignore+=*.csv
 set wildignore+=*.cache
 set wildignore+=*.sql
+set wildignore+=*/tmp/*
 
 "autocmd BufWritePost * :silent !./updategp.sh
 "autocmd BufWritePost * :redraw!
