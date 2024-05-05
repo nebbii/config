@@ -95,9 +95,22 @@
 (setq-default evil-shift-width 2)
 (setq-default evil-shift-round nil)
 
+(setq-default ruby-indent-level 2)
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)   ;; change this to 2 if that is the width
+(setq indent-line-function 'insert-tab)
+
 (setq display-line-numbers-type 'relative)
 
 (setq shell-command-switch "-ic")
+
+;; sell soul to plover
+(setq doom-leader-key "<f12>"
+      doom-leader-alt-key "C-x")
+(setq doom-localleader-key "<f12>"
+      doom-localleader-alt-key "C-x")
+;;(evil-set-leader nil (kbd "C-SPC"))  ;; sets the leader
+;;(evil-set-leader nil (kbd "<leader> m") t) ;; sets localleader
 
 ;; Custom Editing Binds
 (define-key evil-normal-state-map (kbd "C-p") 'consult-find)
@@ -119,12 +132,12 @@
 (define-key evil-replace-state-map (kbd "s-c") 'evil-normal-state)
 (define-key evil-visual-state-map (kbd "s-c") 'evil-normal-state)
 
-(define-key evil-normal-state-map (kbd "SPC c a") 'async-shell-command)
-(define-key evil-normal-state-map (kbd "SPC e") 'treemacs-select-window)
-(define-key evil-normal-state-map (kbd "SPC r") 'consult-ripgrep)
+(define-key evil-normal-state-map (kbd "<f12> c a") 'async-shell-command)
+(define-key evil-normal-state-map (kbd "<f12> e") 'treemacs-select-window)
+(define-key evil-normal-state-map (kbd "<f12> r") 'consult-ripgrep)
 
-(define-key evil-normal-state-map (kbd "SPC v n") 'projectile-run-vterm)
-(define-key evil-normal-state-map (kbd "SPC v r") 'rename-buffer)
+(define-key evil-normal-state-map (kbd "<f12> v n") 'projectile-run-vterm)
+(define-key evil-normal-state-map (kbd "<f12> v r") 'rename-buffer)
 
 (setq projectile-switch-project-action 'projectile-find-file)
 
@@ -133,8 +146,8 @@
 ; vterm
 (setq vterm-max-scrollback 4000)
 (setq vterm-shell "/bin/zsh --login")
-(define-key vterm-mode-map (kbd "<C-c>")
-    (lambda () (interactive) (vterm-send-key (kbd "C-c"))))
+(require 'vterm)
+(define-key vterm-mode-map (kbd "C-c C-c") 'vterm--self-insert)
 
 ; Code Review
 ; (setq code-review-fill-column 80)
@@ -204,5 +217,9 @@
 ;;(setq fancy-splash-image (concat doom-user-dir "cacochan.png"))
 
 (setq +doom-dashboard-ascii-banner-fn #'oppa-klonoa-style)
+
+;;(indent-guide-global-mode)
+;;(set-face-foreground 'indent-guide-face "dimgray")
+;;(setq indent-guide-char ".")
 
 (pinentry-start)
