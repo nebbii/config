@@ -7,7 +7,7 @@
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
 (setq user-full-name "Ben Wolthuis"
-      user-mail-address "ben.wolthuis@gmail.com")
+      user-mail-address "ben.wolthuis@jaamo.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
@@ -81,6 +81,17 @@
 ;;
 (add-to-list 'auto-mode-alist '("\\.kt\\'" . kotlin-mode))
 
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+
+(add-to-list 'auto-mode-alist '("\\.scss\\.erb\\'" . scss-mode))
+
 (setq-default evil-shift-width 2)
 (setq-default evil-shift-round nil)
 
@@ -93,6 +104,10 @@
 (define-key evil-normal-state-map (kbd "C-n") 'projectile-find-file)
 (define-key evil-normal-state-map (kbd "<tab>") 'next-buffer)
 (define-key evil-normal-state-map (kbd "<backtab>") 'previous-buffer)
+
+;; Robe
+(define-key evil-normal-state-map (kbd "s-[") 'robe-jump)
+(define-key evil-normal-state-map (kbd "M-[") 'robe-jump)
 
 ;;(define-key evil-normal-state-map (kbd "C-c") 'evil-normal-state)
 (define-key evil-insert-state-map (kbd "C-c") 'evil-normal-state)
@@ -108,9 +123,33 @@
 (define-key evil-normal-state-map (kbd "SPC e") 'treemacs-select-window)
 (define-key evil-normal-state-map (kbd "SPC r") 'consult-ripgrep)
 
+(define-key evil-normal-state-map (kbd "SPC v n") 'projectile-run-vterm)
+(define-key evil-normal-state-map (kbd "SPC v r") 'rename-buffer)
+
 (setq projectile-switch-project-action 'projectile-find-file)
 
 (setq shell-command-dont-erase-buffer 'end-last-out)
+
+; vterm
+(setq vterm-max-scrollback 4000)
+(setq vterm-shell "/bin/zsh --login")
+(define-key vterm-mode-map (kbd "<C-c>")
+    (lambda () (interactive) (vterm-send-key (kbd "C-c"))))
+
+; Code Review
+; (setq code-review-fill-column 80)
+; (setq code-review-new-buffer-window-strategy #'switch-to-buffer)
+; (setq code-review-download-dir "/tmp/code-review/")
+; (add-hook 'code-review-mode-hook
+;           (lambda ()
+;             ;; include *Code-Review* buffer into current workspace
+;             (persp-add-buffer (current-buffer))))
+
+(require 's3ed)
+(s3ed-mode)
+
+
+;;(setq doom-unreal-buffer-functions '(minibufferp))
 
 ;;(setq  x-meta-keysym 'super
 ;;       x-super-keysym 'meta)
@@ -156,6 +195,13 @@
                "\n"))
      'face 'doom-dashboard-banner)))
 
+(add-hook 'ruby-mode-hook 'robe-mode)
+(add-hook 'ruby-ts-mode-hook 'robe-mode)
+
+(eval-after-load 'company
+  '(push 'company-robe company-backends))
+
+;;(setq fancy-splash-image (concat doom-user-dir "cacochan.png"))
 
 (setq +doom-dashboard-ascii-banner-fn #'oppa-klonoa-style)
 

@@ -49,8 +49,17 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
 
+;(package! elcord)
 (package! kotlin-mode)
-(package! treemacs-evil)
-(package! yaml-mode)
-(package! elcord)
 (package! pinentry)
+(package! robe)
+(package! treemacs-evil)
+(package! vterm)
+(package! yaml-mode)
+(package! web-mode)
+(package! code-review)
+(package! s3ed)
+(package! git-link)
+
+; add to .doom.d/packages.el
+(package! closql :pin "0a7226331ff1f96142199915c0ac7940bac4afdd")

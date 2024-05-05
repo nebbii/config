@@ -6,7 +6,8 @@
  '(elcord-display-buffer-details nil)
  '(elcord-editor-icon "emacs_icon")
  '(elcord-idle-message "Hmmmmmmmmm...........")
- '(package-selected-packages '(gradle-mode helm-projectile helm realgud)))
+ '(package-selected-packages
+   '(s3ed emacsql-sqlite code-review vterm robe gradle-mode helm-projectile helm realgud)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
