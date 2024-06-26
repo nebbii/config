@@ -127,6 +127,10 @@
 (define-key evil-replace-state-map (kbd "C-c") 'evil-normal-state)
 (define-key evil-visual-state-map (kbd "C-c") 'evil-normal-state)
 
+(define-key evil-insert-state-map (kbd "C-{") 'evil-normal-state)
+(define-key evil-replace-state-map (kbd "C-{") 'evil-normal-state)
+(define-key evil-visual-state-map (kbd "C-{") 'evil-normal-state)
+
 (define-key evil-normal-state-map (kbd "s-c") 'evil-normal-state)
 (define-key evil-insert-state-map (kbd "s-c") 'evil-normal-state)
 (define-key evil-replace-state-map (kbd "s-c") 'evil-normal-state)
@@ -221,5 +225,8 @@
 ;;(indent-guide-global-mode)
 ;;(set-face-foreground 'indent-guide-face "dimgray")
 ;;(setq indent-guide-char ".")
+
+(menu-bar--display-line-numbers-mode-absolute)
+
 
 (pinentry-start)
