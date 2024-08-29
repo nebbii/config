@@ -127,15 +127,6 @@
 (define-key evil-replace-state-map (kbd "C-c") 'evil-normal-state)
 (define-key evil-visual-state-map (kbd "C-c") 'evil-normal-state)
 
-(define-key evil-insert-state-map (kbd "C-{") 'evil-normal-state)
-(define-key evil-replace-state-map (kbd "C-{") 'evil-normal-state)
-(define-key evil-visual-state-map (kbd "C-{") 'evil-normal-state)
-
-(define-key evil-normal-state-map (kbd "s-c") 'evil-normal-state)
-(define-key evil-insert-state-map (kbd "s-c") 'evil-normal-state)
-(define-key evil-replace-state-map (kbd "s-c") 'evil-normal-state)
-(define-key evil-visual-state-map (kbd "s-c") 'evil-normal-state)
-
 (define-key evil-normal-state-map (kbd "<f12> c a") 'async-shell-command)
 (define-key evil-normal-state-map (kbd "<f12> e") 'treemacs-select-window)
 (define-key evil-normal-state-map (kbd "<f12> r") 'consult-ripgrep)
@@ -238,11 +229,16 @@
 
 (setq +doom-dashboard-ascii-banner-fn #'oppa-klonoa-style)
 
+(setq evil-escape-key-sequence 'nil)
+
 ;;(indent-guide-global-mode)
 ;;(set-face-foreground 'indent-guide-face "dimgray")
 ;;(setq indent-guide-char ".")
 
-(menu-bar--display-line-numbers-mode-absolute)
+(menu-bar--display-line-numbers-mode-relative)
+
+;;(setq org-roam-directory (file-truename "~/notes"))
+;;(org-roam-db-autosync-mode)
 
 
 (pinentry-start)
