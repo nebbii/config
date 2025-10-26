@@ -17,9 +17,9 @@ default_floating_border normal
 hide_edge_borders none
 
 # change borders
-bindsym $mod+l border none
-bindsym $mod+j border pixel 1
-bindsym $mod+k border normal
+bindsym $mod+u border none
+bindsym $mod+y border pixel 1
+bindsym $mod+n border normal
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -29,13 +29,14 @@ font xft:URWGothic-Book 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt -cd `xcwd`
+#bindsym $mod+Return exec urxvt -cd `xcwd`
+bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+s exec --no-startup-id dmenu_run
+bindsym $mod+d exec --no-startup-id dmenu_run
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
@@ -58,7 +59,7 @@ bindsym $mod+Ctrl+m exec pavucontrol
 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
-bindsym $mod+F2 exec firefox-developer-edition
+bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec pcmanfm
 # bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec
@@ -75,15 +76,15 @@ bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 # focus_follows_mouse no
 
 # change focus
-bindsym $mod+n focus left
-bindsym $mod+e focus down
-bindsym $mod+i focus up
-bindsym $mod+o focus right
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
 
-bindsym $mod2+n focus left
-bindsym $mod2+e focus down
-bindsym $mod2+i focus up
-bindsym $mod2+o focus right
+#bindsym $mod2+j focus left
+#bindsym $mod2+k focus down
+#bindsym $mod2+l focus up
+#bindsym $mod2+semicolon focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -91,21 +92,21 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-bindsym $mod2+Left focus left
-bindsym $mod2+Down focus down
-bindsym $mod2+Up focus up
-bindsym $mod2+Right focus right
+#bindsym $mod2+Left focus left
+#bindsym $mod2+Down focus down
+#bindsym $mod2+Up focus up
+#bindsym $mod2+Right focus right
 
 # move focused window
-bindsym $mod+Shift+n move left
-bindsym $mod+Shift+e move down
-bindsym $mod+Shift+i move up
-bindsym $mod+Shift+o move right
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
 
-bindsym $mod2+Shift+n move left
-bindsym $mod2+Shift+e move down
-bindsym $mod2+Shift+i move up
-bindsym $mod2+Shift+o move right
+#bindsym $mod2+Shift+j move left
+#bindsym $mod2+Shift+k move down
+#bindsym $mod2+Shift+l move up
+#bindsym $mod2+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -114,10 +115,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod2+Shift+Left move left
-bindsym $mod2+Shift+Down move down
-bindsym $mod2+Shift+Up move up
-bindsym $mod2+Shift+Right move right
+#bindsym $mod2+Shift+Left move left
+#bindsym $mod2+Shift+Down move down
+#bindsym $mod2+Shift+Up move up
+#bindsym $mod2+Shift+Right move right
 
 # workspace back and forth (with/without active container)
 workspace_auto_back_and_forth yes
@@ -130,12 +131,12 @@ bindsym $mod+v split v;exec notify-send 'tile vertically'
 #bindsym $mod+q split toggle
 
 # toggle fullscreen mode for the focused container
-bindsym $mod+t fullscreen toggle
+bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+q layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+f layout toggle split
+bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -144,7 +145,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # toggle sticky
-bindsym $mod+Shift+r sticky toggle
+bindsym $mod+Shift+p sticky toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -198,16 +199,16 @@ bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
-bindsym $mod2+1 workspace $ws11
-bindsym $mod2+2 workspace $ws12
-bindsym $mod2+3 workspace $ws13
-bindsym $mod2+4 workspace $ws14
-bindsym $mod2+5 workspace $ws15
-bindsym $mod2+6 workspace $ws16
-bindsym $mod2+7 workspace $ws17
-bindsym $mod2+8 workspace $ws18
-bindsym $mod2+9 workspace $ws19
-bindsym $mod2+0 workspace $ws20
+#bindsym $mod2+1 workspace $ws11
+#bindsym $mod2+2 workspace $ws12
+#bindsym $mod2+3 workspace $ws13
+#bindsym $mod2+4 workspace $ws14
+#bindsym $mod2+5 workspace $ws15
+#bindsym $mod2+6 workspace $ws16
+#bindsym $mod2+7 workspace $ws17
+#bindsym $mod2+8 workspace $ws18
+#bindsym $mod2+9 workspace $ws19
+#bindsym $mod2+0 workspace $ws20
 
 # Move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace $ws1
@@ -221,16 +222,16 @@ bindsym $mod+Ctrl+8 move container to workspace $ws8
 bindsym $mod+Ctrl+9 move container to workspace $ws9
 bindsym $mod+Ctrl+0 move container to workspace $ws10
 
-bindsym $mod2+Ctrl+1 move container to workspace $ws11
-bindsym $mod2+Ctrl+2 move container to workspace $ws12
-bindsym $mod2+Ctrl+3 move container to workspace $ws13
-bindsym $mod2+Ctrl+4 move container to workspace $ws14
-bindsym $mod2+Ctrl+5 move container to workspace $ws15
-bindsym $mod2+Ctrl+6 move container to workspace $ws16
-bindsym $mod2+Ctrl+7 move container to workspace $ws17
-bindsym $mod2+Ctrl+8 move container to workspace $ws18
-bindsym $mod2+Ctrl+9 move container to workspace $ws19
-bindsym $mod2+Ctrl+0 move container to workspace $ws20
+#bindsym $mod2+Ctrl+1 move container to workspace $ws11
+#bindsym $mod2+Ctrl+2 move container to workspace $ws12
+#bindsym $mod2+Ctrl+3 move container to workspace $ws13
+#bindsym $mod2+Ctrl+4 move container to workspace $ws14
+#bindsym $mod2+Ctrl+5 move container to workspace $ws15
+#bindsym $mod2+Ctrl+6 move container to workspace $ws16
+#bindsym $mod2+Ctrl+7 move container to workspace $ws17
+#bindsym $mod2+Ctrl+8 move container to workspace $ws18
+#bindsym $mod2+Ctrl+9 move container to workspace $ws19
+#bindsym $mod2+Ctrl+0 move container to workspace $ws20
 
 # Move to workspace with focused container
 bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
@@ -244,31 +245,27 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
 
-bindsym $mod2+Shift+1 move container to workspace $ws11; workspace $ws11
-bindsym $mod2+Shift+2 move container to workspace $ws12; workspace $ws12
-bindsym $mod2+Shift+3 move container to workspace $ws13; workspace $ws13
-bindsym $mod2+Shift+4 move container to workspace $ws14; workspace $ws14
-bindsym $mod2+Shift+5 move container to workspace $ws15; workspace $ws15
-bindsym $mod2+Shift+6 move container to workspace $ws16; workspace $ws16
-bindsym $mod2+Shift+7 move container to workspace $ws17; workspace $ws17
-bindsym $mod2+Shift+8 move container to workspace $ws18; workspace $ws18
-bindsym $mod2+Shift+9 move container to workspace $ws19; workspace $ws19
-bindsym $mod2+Shift+0 move container to workspace $ws20; workspace $ws20
+#bindsym $mod2+Shift+1 move container to workspace $ws11; workspace $ws11
+#bindsym $mod2+Shift+2 move container to workspace $ws12; workspace $ws12
+#bindsym $mod2+Shift+3 move container to workspace $ws13; workspace $ws13
+#bindsym $mod2+Shift+4 move container to workspace $ws14; workspace $ws14
+#bindsym $mod2+Shift+5 move container to workspace $ws15; workspace $ws15
+#bindsym $mod2+Shift+6 move container to workspace $ws16; workspace $ws16
+#bindsym $mod2+Shift+7 move container to workspace $ws17; workspace $ws17
+#bindsym $mod2+Shift+8 move container to workspace $ws18; workspace $ws18
+#bindsym $mod2+Shift+9 move container to workspace $ws19; workspace $ws19
+#bindsym $mod2+Shift+0 move container to workspace $ws20; workspace $ws20
 
 # xrandr
 exec_always ~/.screenlayout/main.sh
 
 # Open applications on specific workspaces
-# assign [class="Thunderbird"] $ws1
-# assign [class="Pale moon"] $ws2
-# assign [class="Pcmanfm"] $ws3
-# assign [class="Skype"] $ws5
-assign [class="discord"] $ws2
-assign [class="google-chrome-stable"] $ws1
-assign [class="spotify"] $ws3
+assign [class="vesktop"] $ws2
+assign [class="firefox"] $ws1
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
+for_window [class="blueman-manager"] floating enable
 for_window [class="calamares"] floating enable border normal
 for_window [class="Clipgrab"] floating enable
 for_window [title="File Transfer*"] floating enable
@@ -287,6 +284,7 @@ for_window [class="octopi"] floating enable
 for_window [title="About Pale Moon"] floating enable
 for_window [class="Pamac-manager"] floating enable
 for_window [class="Pavucontrol"] floating enable
+for_window [class="Plover"] floating enable
 for_window [class="qt5ct"] floating enable sticky enable border normal
 for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
 for_window [class="Simple-scan"] floating enable border normal
@@ -295,6 +293,14 @@ for_window [class="Skype"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
+for_window [title="Plover: Add Translation"] floating enable, move position center, move right 400 px
+for_window [title="Volume Control"] floating enable
+for_window [title="Bluetooth Devices"] floating enable
+#for_window [instance="steam"] floating enable, resize set 1920 1080, move position 0 0
+for_window[class="steam"] floating enable
+for_window[class="steam" title="^Steam$"] floating disable
+
+
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -303,10 +309,10 @@ for_window [urgent=latest] focus
 bindsym $mod+Shift+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+p restart
+bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+f exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Set shut down, restart and locking features
 bindsym $mod+Escape mode "$mode_system"
@@ -326,17 +332,17 @@ mode "$mode_system" {
 }
 
 # Resize window (you can also use the mouse for that)
-bindsym $mod+p mode "resize"
+bindsym $mod+r mode "resize"
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
         # Pressing left will shrink the window’s width.
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym n resize shrink width 5 px or 5 ppt
-        bindsym e resize grow height 5 px or 5 ppt
-        bindsym i resize shrink height 5 px or 5 ppt
-        bindsym o resize grow width 5 px or 5 ppt
+        bindsym j resize shrink width 5 px or 5 ppt
+        bindsym k resize grow height 5 px or 5 ppt
+        bindsym l resize shrink height 5 px or 5 ppt
+        bindsym semicolon resize grow width 5 px or 5 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -354,20 +360,23 @@ mode "resize" {
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore; sleep 1; compton -b
+# exec --no-startup-id start_conky_green
+# exec_always --no-startup-id sbxkb
 #exec --no-startup-id manjaro-hello
-exec --no-startup-id nm-applet
-exec --no-startup-id xfce4-power-manager
-exec --no-startup-id pamac-tray
+#exec --no-startup-id xautolock -time 10 -locker blurlock
+exec --no-startup-id blueman-applet
 exec --no-startup-id clipit
 exec --no-startup-id ibus-daemon -drx
-exec --no-startup-id blueman-applet
-# exec_always --no-startup-id sbxkb
+exec --no-startup-id kdeconnect-cli 
+exec --no-startup-id nitrogen --restore;
+exec --no-startup-id nm-applet
+exec --no-startup-id pamac-tray
 exec --no-startup-id start_conky_maia
-# exec --no-startup-id start_conky_green
-#exec --no-startup-id xautolock -time 10 -locker blurlock
+exec --no-startup-id xfce4-power-manager
+exec --no-startup-id emacs --daemon
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
+
 
 # Mouse stuff
 exec_always --no-startup-id imwheel -b 45
@@ -376,6 +385,8 @@ exec_always --no-startup-id xinput set-prop 'Kensington      Kensington Expert M
 exec_always --no-startup-id xinput set-prop 'Kensington      Kensington Expert Mouse' 'libinput Accel Speed' -1 
 exec_always --no-startup-id xinput set-prop 'Kensington      Kensington Expert Mouse' 'libinput Accel Profile Enabled' 0, 0
 
+exec_always --no-startup-id xinput set-prop 'Kensington ORBIT WIRELESS TB Mouse' 'libinput Accel Speed' -0.6
+exec_always --no-startup-id xinput set-prop 'Kensington ORBIT WIRELESS TB Mouse' 'libinput Left Handed Enabled' 1
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
@@ -410,27 +421,27 @@ set_from_resource $term_color15    color15
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
-	i3bar_command i3bar
-	status_command i3status
-	position bottom
-
-	tray_output primary
-	bindsym button4 nop
-	bindsym button5 nop
-
-	strip_workspace_numbers yes
-
-  colors {
-      background #000000
-      statusline #FFFFFF
-      separator  #666666
+    i3bar_command i3bar
+    status_command i3status
+    position bottom
     
-      focused_workspace  #4C7899 #285577 #FFFFFF
-      active_workspace   #333333 #173347 #FFFFFF
-      inactive_workspace #333333 #222222 #888888
-      urgent_workspace   #2F343A #900000 #FFFFFF
-      binding_mode       #2F343A #900000 #FFFFFF
-  }
+    tray_output primary
+    bindsym button4 nop
+    bindsym button5 nop
+    
+    strip_workspace_numbers yes
+
+    colors {
+        background #000000
+        statusline #FFFFFF
+        separator  #666666
+      
+        focused_workspace  #4C7899 #285577 #FFFFFF
+        active_workspace   #333333 #173347 #FFFFFF
+        inactive_workspace #333333 #222222 #888888
+        urgent_workspace   #2F343A #900000 #FFFFFF
+        binding_mode       #2F343A #900000 #FFFFFF
+    }
 }
 
 # hide/unhide i3status bar
@@ -444,7 +455,7 @@ client.unfocused        #33302e #33302e #a69181 #454948
 client.urgent           #CB4B16 #FDF6E3 #a69181 #268BD2
 client.placeholder      #000000 #0c0c0c #ffffff #000000 
 
-  client.background       #2B2C2B
+client.background       #2B2C2B
 
 #############################
 ### settings for i3-gaps: ###
@@ -512,8 +523,22 @@ bindsym XF86AudioNext exec cmus-remote -n || playerctl next
 bindsym XF86AudioPrev exec cmus-remote -r || playerctl previous
 
 # programs 
-exec --no-startup-id firefox-developer-edition
-exec --no-startup-id discord
-#exec --no-startup-id spotify
+exec --no-startup-id firefox
+exec --no-startup-id vesktop
+
+# plover
+exec --no-startup-id plover
+#exec --no-startup-id "setxkbmap us -variant colemak"
+
+bindsym $mod+Shift+plus exec /usr/bin/clip
+
+bindsym $mod+Shift+F1 exec ~/.screenlayout/main.sh
+bindsym $mod+Shift+F2 exec ~/.screenlayout/HDTV.sh
+
+bindsym $mod+F10 exec setxkbmap us 
+bindsym $mod+F11 exec setxkbmap us -variant colemak
+#bindsym $mod+F12 exec plover; setxkbmap us -variant colemak
+
 
 exec_always xset r rate 300 35
+exec xset s noblank; xset s off; xset -dpms
